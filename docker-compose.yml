@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  app1:
+    build:
+      context: ./driver-location-api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - muber-network
+  app2:
+    build:
+      context: ./matching-api
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    networks:
+      - muber-network
+
+networks:
+  muber-network:

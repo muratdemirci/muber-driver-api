@@ -1,0 +1,221 @@
+{
+  "info": {
+    "_postman_id": "b63f4664-1431-4903-b50a-81b4c5809359",
+    "name": "DriverLocationApi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "2424823"
+  },
+  "item": [
+    {
+      "name": "Create Driver Locations",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"31231231\",\r\n    \"destination\": \"213123asdsadasdasdas\",\r\n    \"hasPassenger\": false,\r\n    \"idle\": false,\r\n    \"location\": {\r\n        \"type\": \"Point\",\r\n        \"coordinates\": [40.94289771, 29.0390297]\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1337/api/driver-locations",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1337",
+          "path": ["api", "driver-locations"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get single driver location",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1337/api/driver-locations/driver_huoga3upp5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1337",
+          "path": ["api", "driver-locations", "driver_huoga3upp5"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get nearest driver",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-access-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoZW50aWNhdGVkIjp0cnVlLCJpYXQiOjE2ODA4OTUyODAsImV4cCI6MTY4MDg5NTU4MH0.-B1Fp95Hyn9QpsrTQ8QdxVxPZyDI2ZXzllr0qF7bD6o",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:1337/api/search/location?longitude=29.227659&latitude=40.619080",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1337",
+          "path": ["api", "search", "location"],
+          "query": [
+            {
+              "key": "longitude",
+              "value": "29.227659"
+            },
+            {
+              "key": "latitude",
+              "value": "40.619080"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "remove single driver location",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1337/api/driver-locations/driver_47fubnnlpr",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1337",
+          "path": ["api", "driver-locations", "driver_47fubnnlpr"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update single driver location Copy",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"murat\",\r\n    \"destination\": \"213123asdsadasdasdas\",\r\n    \"hasPassenger\": false,\r\n    \"idle\": false,\r\n    \"location\": {\r\n        \"type\": \"Point\",\r\n        \"coordinates\": [40.94289771, 29.0390297]\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1337/api/driver-locations/driver_47fubnnlpr",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1337",
+          "path": ["api", "driver-locations", "driver_47fubnnlpr"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "driver locations healthccheck",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-access-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoZW50aWNhdGVkIjp0cnVlLCJpYXQiOjE2ODAxMTQ1NDksImV4cCI6MTY4MDExNDg0OX0.EUTPSav9b3ieNzn3sbgkmqh1fm-yh9bU7-q_ELL4Fdk",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:1337/api/healthcheck",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1337",
+          "path": ["api", "healthcheck"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "matching api healthccheck",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-access-token",
+            "value": "",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:1447/api/healthcheck",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1447",
+          "path": ["api", "healthcheck"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "matching api valid token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1447/api/token",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1447",
+          "path": ["api", "token"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "matching api invalid token",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1447/api/tokenNotAuthenticated",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1447",
+          "path": ["api", "tokenNotAuthenticated"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "matching api search driver",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-access-token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoZW50aWNhdGVkIjp0cnVlLCJpYXQiOjE2ODA4MDg3NjIsImV4cCI6MTY4MDgwOTA2Mn0.F4KHdCy0W2jSJRUk4nlNlSFVgWbTW-aZn2odKfu3Bbw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"longitude\": \"29.227659\",\r\n    \"latitude\": \"40.619080\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1447/api/search/driver",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1447",
+          "path": ["api", "search", "driver"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
